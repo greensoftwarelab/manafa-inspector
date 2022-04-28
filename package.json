@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
+    "production": "vue-cli-service serve --mode production",
     "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {

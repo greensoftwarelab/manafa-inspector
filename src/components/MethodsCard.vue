@@ -1,6 +1,6 @@
 <template>
     <v-card class="ma-4 main_card">
-        <v-list-group :value="true"> 
+        <v-list-group :value="true" class="large_width"> 
             <template v-slot:activator>
                 <v-icon size="30" >mdi-text-box-multiple-outline</v-icon>
                 <v-list-item-title><h2>Methods</h2></v-list-item-title>

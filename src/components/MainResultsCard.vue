@@ -1,15 +1,15 @@
 <template>
   <v-card class="ma-4 main_card">
-    <v-list-group :value="true"> 
+    <v-list-group :value="true" class="large_width"> 
       <template v-slot:activator>
-          <v-icon size="30" >mdi-chart-box</v-icon>
+          <v-icon size="30">mdi-chart-box</v-icon>
           <v-list-item-title><h1>Global Results</h1></v-list-item-title>
       </template>
       <div class="ma-2 main_div" v-if="has_data_to_show">
-        <div class="ma-2">
+        <div class="ma-2 main_div">
           <pie-chart :chartData="getPieData()" ></pie-chart>
         </div>
-        <div class="ma-2 tab_div">
+        <div class="ma-2 main_div">
           <v-simple-table class="ma-1">
             <template v-slot:default>
               <thead>
@@ -72,45 +72,6 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      pie: {
-         labels: [
-            'CPU',
-            'Screen',
-            'WI-FI',
-            'GPU',
-            'Bluetooth',
-            'NFC'
-        ],
-        datasets: [{
-            data: [300, 50, 100,500,103,4],
-            backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 100, 86)',
-            'rgb(255, 205, 6)',
-            'rgb(255, 100, 186)'
-            ],
-            hoverOffset: 4
-        }]
-      },
-      line1: {
-         labels: [
-            1,2,3,4,5
-        ],
-        datasets: [{
-            label: 'CPU frequency',
-            data: [300, 310, 315,330,320],
-            backgroundColor: [
-            'rgb(54, 162, 235)',
-            ],
-            hoverOffset: 4
-        }]
-      },
-    }
-  },
   computed: {
     has_data_to_show(){
       return Object.keys(this.results).length != 0
@@ -142,20 +103,6 @@ export default {
       const { per_component_consumption, stats,  ...resultsWithoutComponentConsumption } = this.results;
       return resultsWithoutComponentConsumption
     },
-    getColor(idx){
-      const colors = [
-            'rgb(255, 100, 200)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 100, 86)',
-            'rgb(255, 5, 6)',
-            'rgb(5, 205, 66)',
-            'rgb(255, 25, 16)',
-            'rgb(54, 162, 25)',
-            'rgb(25, 205, 250)',
-            'rgb(205, 100, 186)']
-      return colors[idx % colors.length]
-    },
     getColors(){
       return [
             'rgb(255, 100, 200)',
@@ -176,6 +123,9 @@ export default {
 
 <style>
 
+.large_width {
+  width: 95%;
+}
 
 .main_card {
   display: flex;
@@ -189,6 +139,7 @@ export default {
   flex-direction: row;
   align-items: center;
   width:100%;
+  justify-content: center;
 }
 
 .tab_div {

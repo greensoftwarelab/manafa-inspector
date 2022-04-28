@@ -1,5 +1,5 @@
 <template>
-  <div class="filepicker">
+  <div class="ma-4 filepicker">
     <h3 class="ma-2">Results File: {{loaded_file}}</h3>
     <v-file-input
         accept="application/json"
@@ -28,8 +28,6 @@ export default {
             if (this.my_file != null && !this.loaded){
                 this.loaded = true
                 this.loaded_file = this.name()
-                console.log(this.my_file)
-                
                 this.$emit('filechange', this.my_file)
             }
             else if (this.loaded){
