@@ -3,5 +3,5 @@ module.exports = {
     'vuetify'
   ],
   productionSourceMap: process.env.NODE_ENV != 'production',
-  publicPath: '/manafa-reporter/'
+  publicPath: '/manafa-inspector/'
 }

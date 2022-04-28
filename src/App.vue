@@ -5,7 +5,7 @@
       color="primary"
       dark
     >
-      <h1>E-MANAFA Report</h1>
+      <h1>E-MANAFA Inspector</h1>
       <v-spacer></v-spacer>
       <v-btn
         href="https://greensoftwarelab.github.io/E-MANAFA/"
